@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.1.0
+@version        0.2.0
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 ==/UserStyle== */
@@ -17,10 +17,13 @@
   .r-yfoy6g {
     background-color: var(--background-color) !important;
   }
+
   /* search form */
   .r-aaos50,
   /* empty line use as border in /compose/tweet */
-  .r-kuekak {
+  .r-kuekak,
+  /* timeline in /:name/status/:id */
+  .r-hjejmn {
     background-color: var(--background-color-accent);
   }
 
@@ -28,30 +31,48 @@
   .r-o4zss7,
   /* border color horizontal */
   .r-1ila09b,
-  /* border color vertical*/
-  .r-18bvks7 {
+  /* border color vertical */
+  .r-18bvks7,
+  /* border-top-color */
+  .r-1kfrmmb {
     border-color: var(--background-color-accent);
   }
 
-  /* profile photo  */
-  .r-hjejmn {
+  /* profile photo */
+  .r-hjejmn.r-1udh08x {
     background-color: transparent;
+  }
+
+  [class='css-1dbjc4n r-hjejmn'] {
+    background-color: transparent;
+  }
+
+  /** fix **/
+  /* remove padding under reply */
+  .r-kzbkwu.r-aaos50 {
+    padding-bottom: 0;
+  }
+
+  /* change box of Show replies in /:name/status/:id */
+  .r-m2pi6t.r-19u6a5r[role='button'] {
+    margin-left: 0;
+    padding-left: 16px;
   }
 
   /** hide annoying **/
   /* What’s happening */
   [data-testid='primaryColumn'] > .css-1dbjc4n > .r-184en5c,
-  /* Who to follow title & Topics to follow title  */
+  /* Who to follow title & Topics to follow title */
   .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .r-1wtj0ep.r-ymttw5.r-1f1sjgu,
-  /* Who to follow content  */
+  /* Who to follow content */
   [data-testid='UserCell'],
-  /* Who to follow Show more  */
+  /* Who to follow Show more */
   [href^='/i/connect_people?user_id='],
   /* empty lines */
   [data-testid='primaryColumn'] .r-tbmifm,
   /* Topics to follow content */
   [data-testid='primaryColumn'] .r-1adg3ll > section,
-  /* Topics to follow More Topics  */
+  /* Topics to follow More Topics */
   [href^='/i/flow/topics_selector'],
   /* Sidebar */
   [data-testid='sidebarColumn'] {
@@ -59,11 +80,11 @@
   }
 
   /* empty border fix */
-  [data-testid='primaryColumn'] .r-qklmqi {
+  [data-testid='primaryColumn'] .r-qklmqi:not([role='group']) {
     border-bottom-width: 0;
   }
 
-  [data-testid='primaryColumn'] .r-qklmqi > div:last-child {
+  [data-testid='primaryColumn'] .r-qklmqi:not([role='group']) > div:last-child {
     border-bottom-color: var(--background-color-accent);
     border-bottom-width: 1px;
   }
