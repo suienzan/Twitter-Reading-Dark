@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.3.1
+@version        0.3.2
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 ==/UserStyle== */
@@ -62,6 +62,8 @@
   /** hide annoying **/
   /* What’s happening */
   [data-testid='primaryColumn'] > .css-1dbjc4n > .r-184en5c,
+  /* Suggested */
+  .css-1dbjc4n.r-1s2bzr4,
   /* Who to follow title & Topics to follow title */
   .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .r-1wtj0ep.r-ymttw5.r-1f1sjgu,
   /* Who to follow content */
