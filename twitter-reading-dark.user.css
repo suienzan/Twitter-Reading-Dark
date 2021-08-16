@@ -1,14 +1,15 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.3.3
+@version        0.4.0
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 ==/UserStyle== */
 @-moz-document url-prefix('https://twitter.com/') {
   :root {
-    --background-color: #333435;
-    --background-color-accent: #444648;
+    --background-color: rgb(51, 52, 53);
+    --background-color-accent: rgb(68, 70, 72);
+    --background-color-accent-alpha: rgb(68, 70, 72, 0.4);
   }
 
   /** color **/
@@ -23,14 +24,17 @@
   /* empty line use as border in /compose/tweet */
   .r-kuekak,
   /* timeline in /:name/status/:id */
-  .r-hjejmn {
+  .r-hjejmn,
+  /* highlight background in menu */
+  .r-1uaug3w,
+  /* hr */
+  .r-109y4c4 {
     background-color: var(--background-color-accent);
   }
 
-  /* remove hr margin */
-  .r-109y4c4 {
-    margin-bottom: 0;
-    margin-top: 0;
+  /* dialog overlay */
+  .r-11z020y {
+    background-color: var(--background-color-accent-alpha);
   }
 
   /* border color in /compose/tweet */
@@ -54,6 +58,12 @@
   }
 
   /** fix **/
+  /* remove hr margin */
+  .r-109y4c4 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
   /* remove padding under reply */
   .r-kzbkwu.r-aaos50 {
     padding-bottom: 0;
@@ -69,8 +79,8 @@
   /* What’s happening */
   [data-testid='primaryColumn'] > .css-1dbjc4n > .r-184en5c,
   /* Who to follow title & Topics to follow title */
-  .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .r-1wtj0ep.r-ymttw5.r-1f1sjgu,
-  /* Who to follow content */
+  .r-1wtj0ep.r-ymttw5.r-1f1sjgu,
+  /* Who to follow content `!!! NOTE THIS WILL ALSO HIDE FOLLOWING` */
   [data-testid='UserCell'],
   /* Who to follow Show more */
   [href^='/i/connect_people?user_id='],
