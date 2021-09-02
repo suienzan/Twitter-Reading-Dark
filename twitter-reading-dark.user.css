@@ -1,13 +1,12 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.5.0
+@version        0.5.1
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
-@preprocessor   stylus
-@var checkbox   remove-like "Remove Like" 0
 ==/UserStyle== */
-@-moz-document url-prefix('https://twitter.com/'), url-prefix('https://*.twitter.com/') {
+
+@-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
   :root {
     --background-color: rgb(51, 52, 53);
     --background-color-accent: rgb(68, 70, 72);
@@ -82,8 +81,6 @@
   [data-testid='primaryColumn'] > .css-1dbjc4n > .r-184en5c,
   /* Who to follow title & Topics to follow title */
   .r-1wtj0ep.r-ymttw5.r-1f1sjgu,
-  /* Who to follow content `!!! NOTE THIS WILL ALSO HIDE FOLLOWING` */
-  [data-testid='UserCell'],
   /* Who to follow Show more */
   [href^='/i/connect_people?user_id='],
   /* empty lines */
@@ -109,9 +106,14 @@
     border-bottom-width: 1px;
   }
 
-  if removeLike {
-    [data-testid='like'][role='button'] {
-      display: none !important;
-    }
+  [data-testid='like'][role='button'] {
+    display: none !important;
+  }
+}
+
+@-moz-document regexp('^(?!.*(?:\\/(.+)){2}(following|followers))https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
+  /* Who to follow content */
+  [data-testid='UserCell'] {
+    display: none;
   }
 }
