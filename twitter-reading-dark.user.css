@@ -5,6 +5,7 @@
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 ==/UserStyle== */
+
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
   :root {
     --background-color: rgb(51, 52, 53);
@@ -80,7 +81,7 @@
   [href^='/i/connect_people?user_id='],
   /* empty border after Who to follow & etc... */
   .r-109y4c4.r-1p6iasa,
-  /* Topics to follow content */
+  /* Topics to follow content in profile page */
   [data-testid='primaryColumn'] .r-1adg3ll > section,
   /* Topics to follow More Topics */
   [href^='/i/topics/picker/home'],
