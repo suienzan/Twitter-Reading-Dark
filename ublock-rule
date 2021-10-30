@@ -1,0 +1,2 @@
+! Remove topics
+twitter.com##article:has(a[href^='/i/topics/'][id])
