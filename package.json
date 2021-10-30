@@ -3,7 +3,7 @@
   "author": "Midori <suienzan@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "stylelint": "^13.12.0",
+    "stylelint": "^14.0.1",
     "stylelint-config-sass-guidelines": "^8.0.0"
   }
 }
