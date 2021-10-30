@@ -20,4 +20,4 @@ Then:
 
 2. Change twitter display setting: More - Display - Background to `Dim`.
 
-3. (Optional) It's hard to hide twitter topic using userstyle. Try [aspen / NoMoreTwitterInterests](https://openuserjs.org/scripts/aspen/NoMoreTwitterInterests) if you don't like twitter topic.
+3. (Optional) It's hard to hide twitter topic using userstyle. Try the following ublock rules `https://raw.githubusercontent.com/suienzan/Twitter-Reading-Dark/main/ublock-rules` if you don't like twitter topic.
