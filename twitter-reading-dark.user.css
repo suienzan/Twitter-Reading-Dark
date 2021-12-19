@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.5.5
+@version        0.5.6
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -34,8 +34,14 @@
   }
 
   /* blurred background in top nav */
-  .r-ii8lfi {
+  .r-ii8lfi,
+  .r-snbmw9 {
     background-color: var(--background-color-alpha);
+  }
+
+  /* Firefox fix. Need enable `layout.css.backdrop-filter.enabled` in `about:config` */
+  .r-snbmw9 {
+    backdrop-filter: blur(12px);
   }
 
   /* dialog overlay */

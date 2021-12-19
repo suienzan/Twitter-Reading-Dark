@@ -20,4 +20,6 @@ Then:
 
 2. Change twitter display setting: More - Display - Background to `Dim`.
 
-3. (Optional) It's hard to hide twitter topic using userstyle. Try the following ublock rules `https://raw.githubusercontent.com/suienzan/Twitter-Reading-Dark/main/ublock-rules` if you don't like twitter topic.
+3. For firefox user. You may need enable `layout.css.backdrop-filter.enabled` in `about:config` to make the top nav looks the same as which in Chrome.
+
+4. (Optional) It's hard to hide twitter topic using userstyle. Try the following ublock rules `https://raw.githubusercontent.com/suienzan/Twitter-Reading-Dark/main/ublock-rules` if you don't like twitter topic.
