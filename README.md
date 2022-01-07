@@ -16,7 +16,7 @@ A userstyle extension is required, common ones include:
 
 Then:
 
-1. 📦 [Install the usercss](https://github.com/suienzan/Twitter-Reading-Dark/raw/master/twitter-reading-dark.user.css). It supports automatic updates.
+1. 📦 [Install the usercss](https://github.com/suienzan/Twitter-Reading-Dark/raw/main/twitter-reading-dark.user.css). It supports automatic updates.
 
 2. Change twitter display setting: More - Display - Background to `Dim`.
 
