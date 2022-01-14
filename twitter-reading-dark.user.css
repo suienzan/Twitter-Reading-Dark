@@ -1,24 +1,38 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.5.7
+@version        0.6.0
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
+@preprocessor   stylus
+
+@var            checkbox light "Use light theme" 0
 ==/UserStyle== */
 
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
   :root {
-    --background-color: rgb(51, 52, 53);
-    --background-color-alpha: rgb(51, 52, 53, 0.75);
-    --background-color-accent: rgb(68, 70, 72);
-    --background-color-accent-alpha: rgb(68, 70, 72, 0.4);
+    --background-color: #333435;
+    --background-color-alpha: #333435bf;
+    --background-color-accent: #444648;
+    --background-color-accent-alpha: #44464866;
+  }
+
+  if light {
+    :root {
+      --background-color: #fbfafa;
+      --background-color-alpha: #fbfafabf;
+      --background-color-accent: #ebe1ff;
+      --background-color-accent-alpha: #ebe1ff66;
+    }
   }
 
   /** color **/
   /* main background */
   body,
-  .r-yfoy6g {
+  .r-yfoy6g,
+  .r-14lw9ot,
+  .r-1yc6c17 {
     background-color: var(--background-color) !important;
   }
 

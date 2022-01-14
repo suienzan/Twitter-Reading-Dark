@@ -18,7 +18,7 @@ Then:
 
 1. 📦 [Install the usercss](https://github.com/suienzan/Twitter-Reading-Dark/raw/main/twitter-reading-dark.user.css). It supports automatic updates.
 
-2. Change twitter display setting: More - Display - Background to `Dim`.
+2. Change twitter display setting: More - Display - Background to `Dim`. Or to `Default` if you use light theme.
 
 3. For firefox user. You may need enable `layout.css.backdrop-filter.enabled` in `about:config` to make the top nav looks the same as which in Chrome.
 
