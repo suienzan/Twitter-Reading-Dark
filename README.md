@@ -6,6 +6,8 @@ A twitter dark theme for better reading experience, intended to hide all twitter
 
 ![screenshot.png](images/screenshot.png)
 
+![screenshot_light.png](images/screenshot_light.png)
+
 ## Installation
 
 A userstyle extension is required, common ones include:
