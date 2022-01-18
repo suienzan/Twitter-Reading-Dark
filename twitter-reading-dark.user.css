@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.1
+@version        0.6.2
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -47,14 +47,15 @@
   }
 
   /* blurred background in top nav */
+  /* Need to set */
+  /* `layout.css.backdrop-filter.enabled` and */
+  /* `gfx.webrender.all` to true */
+  /* in `about:config` if you use Firefox. */
+  /* But it's not working since firefox 96. */
   .r-6026j,
   .r-1yc6c17 {
-    background-color: var(--background-color-alpha);
-  }
-
-  /* Firefox fix. Need enable `layout.css.backdrop-filter.enabled` in `about:config` */
-  .r-snbmw9 {
     backdrop-filter: blur(12px);
+    background-color: var(--background-color-alpha);
   }
 
   /* dialog overlay */
