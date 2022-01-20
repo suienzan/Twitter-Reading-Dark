@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.3
+@version        0.6.4
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -52,6 +52,7 @@
   /* `gfx.webrender.all` to true */
   /* in `about:config` if you use Firefox. */
   /* But it's not working since firefox 96. */
+  .r-snbmw9,
   .r-ii8lfi,
   .r-6026j,
   .r-1yc6c17 {
