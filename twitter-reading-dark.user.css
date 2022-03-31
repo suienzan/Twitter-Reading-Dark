@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.6
+@version        0.6.7
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -38,19 +38,21 @@
   /** color **/
   /* main background */
   body,
-  .r-yfoy6g,
-  .r-14lw9ot {
+  :not([role='radiogroup']) > .r-yfoy6g,
+  :not([role='radiogroup']) > .r-14lw9ot {
     background-color: var(--background-color) !important;
   }
 
-  /* search form */
-  .r-aaos50,
+  /* search bar background (light & dark)*/
+  .r-1sw30gj,
+  .r-8erxvq,
   /* empty line use as border in /compose/tweet */
   .r-kuekak,
   /* timeline in /:name/status/:id */
   .r-hjejmn,
-  /* highlight background in menu */
-  .r-1uaug3w {
+  /* highlight background in menu (light & dark)*/
+  .r-x572qd,
+  .r-g6ijar {
     background-color: var(--background-color-accent);
   }
 
