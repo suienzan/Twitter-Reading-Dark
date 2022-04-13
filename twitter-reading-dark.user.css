@@ -1,13 +1,14 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.7
+@version        0.6.8
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 @preprocessor   stylus
 
 @var            checkbox light "Use light theme" 0
+@var            checkbox noLike "Hide like button" 0
 ==/UserStyle== */
 
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
@@ -62,6 +63,7 @@
   /* `gfx.webrender.all` to true */
   /* in `about:config` if you use Firefox. */
   /* But it's not working since firefox 96. */
+  /* https://bugzilla.mozilla.org/show_bug.cgi?id=1749625 */
   .r-snbmw9,
   .r-ii8lfi,
   .r-6026j,
@@ -124,8 +126,6 @@
   [href^='/i/topics/picker/home'],
   /* Discover new Lists */
   [href^='/i/lists/'],
-  /* Like button */
-  [data-testid='like'][role='button'],
   /* empty blocks after purging topics by script (README.md - (Optional))*/
   .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .css-1dbjc4n:empty,
   /* Push notifications */
@@ -133,6 +133,14 @@
   /* Sidebar */
   [data-testid='sidebarColumn'] {
     display: none;
+  }
+
+  /* Like button */
+  if noLike {
+    [data-testid='like'][role='button'] {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   /* empty border fix */
