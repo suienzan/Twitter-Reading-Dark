@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.8
+@version        0.6.9
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -78,13 +78,10 @@
   }
 
   /* border color in /compose/tweet */
-  .r-o4zss7,
-  /* border color horizontal */
-  .r-1ila09b,
-  /* border color vertical */
+  .r-j5o65s,
+  /* border color vertical (light & dark) */
   .r-18bvks7,
-  /* border-top-color */
-  .r-1kfrmmb {
+  .r-1ets6dv, {
     border-color: var(--background-color-accent);
   }
 
@@ -129,7 +126,7 @@
   /* empty blocks after purging topics by script (README.md - (Optional))*/
   .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .css-1dbjc4n:empty,
   /* Push notifications */
-  [class='css-1dbjc4n r-yfoy6g'],
+  [data-testid='inlinePrompt']
   /* Sidebar */
   [data-testid='sidebarColumn'] {
     display: none;
@@ -144,11 +141,11 @@
   }
 
   /* empty border fix */
-  [data-testid='primaryColumn'] .r-qklmqi:not([role='group']) {
+  [data-testid='primaryColumn'] .r-qklmqi {
     border-bottom-width: 0;
   }
 
-  [data-testid='primaryColumn'] .r-qklmqi:not([role='group']) > div:last-child {
+  [data-testid='primaryColumn'] article {
     border-bottom-color: var(--background-color-accent);
     border-bottom-width: 1px;
   }
