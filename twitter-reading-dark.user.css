@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.9
+@version        0.6.10
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -122,11 +122,11 @@
   /* Topics to follow More Topics */
   [href^='/i/topics/picker/home'],
   /* Discover new Lists */
-  [href^='/i/lists/'],
+  [data-testid="listCell"],
   /* empty blocks after purging topics by script (README.md - (Optional))*/
   .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .css-1dbjc4n:empty,
   /* Push notifications */
-  [data-testid='inlinePrompt']
+  [data-testid='inlinePrompt'],
   /* Sidebar */
   [data-testid='sidebarColumn'] {
     display: none;
