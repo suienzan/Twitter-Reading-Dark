@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.10
+@version        0.6.11
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 @preprocessor   stylus
 
-@var            checkbox light "Use light theme" 0
-@var            checkbox noLike "Hide like button" 0
+@var            checkbox light 'Use light theme' 0
+@var            checkbox noLike 'Hide like button' 0
 ==/UserStyle== */
 
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
@@ -117,12 +117,12 @@
   [href^='/i/connect_people?user_id='],
   /* empty border after Who to follow & etc... */
   .r-109y4c4,
-  /* Topics to follow content in profile page */
-  [data-testid='primaryColumn'] .r-1adg3ll > section,
+  /* Topics to follow content */
+  [data-testid='primaryColumn'] section nav[role='navigation'],
   /* Topics to follow More Topics */
   [href^='/i/topics/picker/home'],
   /* Discover new Lists */
-  [data-testid="listCell"],
+  [data-testid='listCell'],
   /* empty blocks after purging topics by script (README.md - (Optional))*/
   .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .css-1dbjc4n:empty,
   /* Push notifications */
