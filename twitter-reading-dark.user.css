@@ -1,25 +1,20 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.6.11
+@version        0.7.0
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
 @preprocessor   stylus
 
-@var            checkbox light 'Use light theme' 0
-@var            checkbox noLike 'Hide like button' 0
+@var            select theme "Theme" ["0:Default*", "1:IM@S Light", "2:IM@S Dark"] 
+@var            checkbox noLike "Hide like button" 0
+
 ==/UserStyle== */
-
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
-  :root {
-    --background-color: #333435;
-    --background-color-alpha: #333435bf;
-    --background-color-accent: #444648;
-    --background-color-accent-alpha: #44464866;
-  }
-
-  if light {
+  /* stylelint-disable selector-max-compound-selectors */
+  /** IM@S Light **/
+  if theme == 1 {
     :root {
       --background-color: #fbfafa;
       --background-color-alpha: #fbfafabf;
@@ -27,12 +22,35 @@
       --background-color-accent-alpha: #ebe1ff66;
     }
 
+    /* twitter logo */
     .r-1cvl2hr {
       color: #be1e3e;
     }
+  }
 
-    .r-1peqgm7 {
-      background-color: #be1e3e1a;
+  /** IM@S Dark **/
+  else if theme == 2 {
+    :root {
+      --background-color: #3f3538;
+      --background-color-alpha: #3f3538bf;
+      --background-color-accent: #515558;
+      --background-color-accent-alpha: #51555866;
+    }
+
+    /* twitter logo */
+    .r-jwli3a {
+      color: #f8a3bc;
+    }
+  }
+  /* stylelint-enable selector-max-compound-selectors */
+
+  /** Default **/
+  else {
+    :root {
+      --background-color: #333435;
+      --background-color-alpha: #333435bf;
+      --background-color-accent: #444648;
+      --background-color-accent-alpha: #44464866;
     }
   }
 
@@ -148,6 +166,11 @@
   [data-testid='primaryColumn'] article {
     border-bottom-color: var(--background-color-accent);
     border-bottom-width: 1px;
+  }
+
+  /* border color in /compose/tweet */
+  .r-1ila09b {
+    border-bottom-color: var(--background-color-accent);
   }
 }
 
