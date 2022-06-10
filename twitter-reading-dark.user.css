@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.7.0
+@version        0.7.1
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -16,10 +16,10 @@
   /** IM@S Light **/
   if theme == 1 {
     :root {
-      --background-color: #fbfafa;
-      --background-color-alpha: #fbfafabf;
-      --background-color-accent: #ebe1ff;
-      --background-color-accent-alpha: #ebe1ff66;
+      --color-background: #fbfafa;
+      --color-background-alpha: #fbfafabf;
+      --color-background-accent: #ebe1ff;
+      --color-background-accent-alpha: #ebe1ff66;
     }
 
     /* twitter logo */
@@ -31,15 +31,39 @@
   /** IM@S Dark **/
   else if theme == 2 {
     :root {
-      --background-color: #3f3538;
-      --background-color-alpha: #3f3538bf;
-      --background-color-accent: #515558;
-      --background-color-accent-alpha: #51555866;
+      --color-background: #3f3538;
+      --color-background-alpha: #3f3538bf;
+      --color-background-accent: #515558;
+      --color-background-accent-alpha: #51555866;
+      --color-primary: #f8a3bc;
+      --color-background-button: #5a2b8d;
+      --color-background-button-accent: #84329b;
     }
 
     /* twitter logo */
     .r-jwli3a {
-      color: #f8a3bc;
+      color: var(--color-primary);
+    }
+
+    /** Special color change for purple theme **/
+    .r-168457u {
+      background-color: var(--color-primary);
+    }
+
+    a[role='link'].r-168457u {
+      background-color: var(--color-background-button);
+    }
+
+    .r-8g4rmw {
+      background-color: var(--color-background-button-accent);
+    }
+
+    .r-kpws4y {
+      color: var(--color-primary);
+    }
+
+    svg.r-kpws4y {
+      color: var(--color-background-button);
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
@@ -47,10 +71,10 @@
   /** Default **/
   else {
     :root {
-      --background-color: #333435;
-      --background-color-alpha: #333435bf;
-      --background-color-accent: #444648;
-      --background-color-accent-alpha: #44464866;
+      --color-background: #333435;
+      --color-background-alpha: #333435bf;
+      --color-background-accent: #444648;
+      --color-background-accent-alpha: #44464866;
     }
   }
 
@@ -59,7 +83,7 @@
   body,
   :not([role='radiogroup']) > .r-yfoy6g,
   :not([role='radiogroup']) > .r-14lw9ot {
-    background-color: var(--background-color) !important;
+    background-color: var(--color-background) !important;
   }
 
   /* search bar background (light & dark)*/
@@ -72,7 +96,7 @@
   /* highlight background in menu (light & dark)*/
   .r-x572qd,
   .r-g6ijar {
-    background-color: var(--background-color-accent);
+    background-color: var(--color-background-accent);
   }
 
   /* blurred background in top nav */
@@ -87,12 +111,12 @@
   .r-6026j,
   .r-1yc6c17 {
     backdrop-filter: blur(12px);
-    background-color: var(--background-color-alpha);
+    background-color: var(--color-background-alpha);
   }
 
   /* dialog overlay */
   .r-11z020y {
-    background-color: var(--background-color-accent-alpha);
+    background-color: var(--color-background-accent-alpha);
   }
 
   /* border color in /compose/tweet */
@@ -100,7 +124,7 @@
   /* border color vertical (light & dark) */
   .r-18bvks7,
   .r-1ets6dv, {
-    border-color: var(--background-color-accent);
+    border-color: var(--color-background-accent);
   }
 
   /* profile photo */
@@ -164,13 +188,13 @@
   }
 
   [data-testid='primaryColumn'] article {
-    border-bottom-color: var(--background-color-accent);
+    border-bottom-color: var(--color-background-accent);
     border-bottom-width: 1px;
   }
 
   /* border color in /compose/tweet */
   .r-1ila09b {
-    border-bottom-color: var(--background-color-accent);
+    border-bottom-color: var(--color-background-accent);
   }
 }
 
