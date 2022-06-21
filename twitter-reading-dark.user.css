@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.7.1
+@version        0.7.2
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -35,35 +35,11 @@
       --color-background-alpha: #3f3538bf;
       --color-background-accent: #515558;
       --color-background-accent-alpha: #51555866;
-      --color-primary: #f8a3bc;
-      --color-background-button: #5a2b8d;
-      --color-background-button-accent: #84329b;
     }
 
     /* twitter logo */
-    .r-jwli3a {
-      color: var(--color-primary);
-    }
-
-    /** Special color change for purple theme **/
-    .r-168457u {
-      background-color: var(--color-primary);
-    }
-
-    a[role='link'].r-168457u {
-      background-color: var(--color-background-button);
-    }
-
-    .r-8g4rmw {
-      background-color: var(--color-background-button-accent);
-    }
-
-    .r-kpws4y {
-      color: var(--color-primary);
-    }
-
-    svg.r-kpws4y {
-      color: var(--color-background-button);
+    [href='/home'] svg.r-jwli3a {
+      color: #f8a3bc;
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
