@@ -77,15 +77,10 @@
   }
 
   /* blurred background in top nav */
-  /* If you are using Firefox. Make sure your Firefox version is greater than 102.0 */
-  /* And set */
-  /* `layout.css.backdrop-filter.enabled` to `true` */
-  /* in `about:config` */
   .r-snbmw9,
   .r-ii8lfi,
   .r-6026j,
   .r-1yc6c17 {
-    backdrop-filter: blur(12px);
     background-color: var(--color-background-alpha);
   }
 
