@@ -1,2 +1,0 @@
-! Remove topics
-twitter.com##div[style*="transform:"]:has(a[href^='/i/topics/'][id])
