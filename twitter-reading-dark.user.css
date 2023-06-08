@@ -9,6 +9,7 @@
 
 @var            select theme "Theme" ["0:Default*", "1:IM@S Light", "2:IM@S Dark"] 
 @var            checkbox noLike "Hide like button" 0
+@var            checkbox noNav "Hide nav in timeline" 0
 
 ==/UserStyle== */
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
@@ -169,6 +170,13 @@
   /* border color in /compose/tweet */
   .r-1ila09b {
     border-bottom-color: var(--color-background-accent);
+  }
+
+  /* nav in timeline */
+  if noNav {
+    main nav.css-1dbjc4n {
+      display: none;
+    }
   }
 }
 
