@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.8.1
+@version        0.8.2
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -166,7 +166,9 @@
   .r-1ila09b {
     border-bottom-color: var(--color-background-accent);
   }
+}
 
+@-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/home') {
   /* nav in timeline */
   if noNav {
     main nav.css-1dbjc4n:not([aria-label]) {
