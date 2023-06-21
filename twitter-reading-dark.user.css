@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.8.2
+@version        0.8.3
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -177,7 +177,7 @@
   }
 }
 
-@-moz-document regexp('^(?!.*(?:\\/(.+)){2}(following|followers))https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
+@-moz-document regexp('^(?!.*(?:\\/(.+)){1}(search\\?))(?!.*(?:\\/(.+)){2}(following|followers)$)https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
   /* Who to follow content */
   [data-testid='UserCell'] {
     display: none;
