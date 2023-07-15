@@ -170,9 +170,29 @@
 
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/home') {
   /* nav in timeline */
+  /* hacky solution to display bug in new tweets hint. */
   if noNav {
-    main nav.css-1dbjc4n:not([aria-label]) {
-      display: none;
+    [data-testid="primaryColumn"] [tabindex] > :first-child {
+      pointer-events: none;
+    }
+
+    main section [data-testid="cellInnerDiv"] {
+      margin-top: -53px !important;
+    }
+
+    .r-1e5uvyk {
+      backdrop-filter: none;
+      background-color: transparent;
+    }
+
+    .r-1e5uvyk > :first-child {
+      background-color: var(--color-background-alpha);
+      backdrop-filter: blur(12px);
+
+    }
+
+    .r-1e5uvyk > :last-child {
+      opacity: 0;
     }
   }
 }
