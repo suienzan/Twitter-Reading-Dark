@@ -13,9 +13,10 @@
 
 ==/UserStyle== */
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
+
   /* stylelint-disable selector-max-compound-selectors */
   /** IM@S Light **/
-  if theme == 1 {
+  if theme==1 {
     :root {
       --color-background: #fbfafa;
       --color-background-alpha: #fbfafabf;
@@ -30,7 +31,7 @@
   }
 
   /** IM@S Dark **/
-  else if theme == 2 {
+  else if theme==2 {
     :root {
       --color-background: #3f3538;
       --color-background-alpha: #3f3538bf;
@@ -43,6 +44,7 @@
       color: #f8a3bc;
     }
   }
+
   /* stylelint-enable selector-max-compound-selectors */
 
   /** Default **/
@@ -58,8 +60,8 @@
   /** color **/
   /* main background */
   body,
-  :not([role='radiogroup']) > .r-yfoy6g,
-  :not([role='radiogroup']) > .r-14lw9ot {
+  :not([role='radiogroup'])>.r-yfoy6g,
+  :not([role='radiogroup'])>.r-14lw9ot {
     background-color: var(--color-background) !important;
   }
 
@@ -93,7 +95,7 @@
   .r-j5o65s,
   /* border color vertical (light & dark) */
   .r-18bvks7,
-  .r-1ets6dv, {
+  .r-1ets6dv {
     border-color: var(--color-background-accent);
   }
 
@@ -120,7 +122,7 @@
 
   /** hide annoying **/
   /* What’s happening */
-  [data-testid='primaryColumn'] > .css-1dbjc4n > .r-184en5c,
+  [data-testid='primaryColumn']>.css-1dbjc4n>.r-184en5c,
   /* Who to follow title & etc... */
   [class='css-1dbjc4n r-1wtj0ep r-1ny4l3l r-ymttw5 r-1f1sjgu'],
   /* Who to follow title & etc... in mobile.twitter.com */
@@ -136,7 +138,7 @@
   /* Discover new Lists */
   [data-testid='listCell'],
   /* empty blocks after purging topics by script (README.md - (Optional))*/
-  .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l > .css-1dbjc4n:empty,
+  .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l>.css-1dbjc4n:empty,
   /* Push notifications */
   [data-testid='inlinePrompt'],
   /* Sidebar */
@@ -169,10 +171,11 @@
 }
 
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/home') {
+
   /* nav in timeline */
   /* hacky solution to display bug in new tweets hint. */
   if noNav {
-    [data-testid="primaryColumn"] [tabindex] > :first-child {
+    [data-testid="primaryColumn"] [tabindex]> :first-child {
       pointer-events: none;
     }
 
@@ -185,19 +188,20 @@
       background-color: transparent;
     }
 
-    .r-1e5uvyk > :first-child {
+    .r-1e5uvyk> :first-child {
       background-color: var(--color-background-alpha);
       backdrop-filter: blur(12px);
 
     }
 
-    .r-1e5uvyk > :last-child {
+    .r-1e5uvyk> :last-child {
       opacity: 0;
     }
   }
 }
 
 @-moz-document regexp('^(?!.*(?:\\/(.+)){1}(search\\?))(?!.*(?:\\/(.+)){2}(following|followers)$)https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
+
   /* Who to follow content */
   [data-testid='UserCell'] {
     display: none;
