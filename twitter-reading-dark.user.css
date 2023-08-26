@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.8.6
+@version        0.8.7
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -148,9 +148,12 @@
 
   /* Like button */
   if noLike {
-    [data-testid='like'][role='button'] {
-      opacity: 0;
-      pointer-events: none;
+
+    /* :has selector needs be explicitly enabled in Firefox */
+    /* see https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility */
+    [data-testid='like'][role='button'],
+    :has(>[data-testid='like'][role='button']) {
+      display: none;
     }
   }
 
