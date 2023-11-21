@@ -149,8 +149,7 @@
   /* Like button */
   if noLike {
 
-    /* :has selector needs be explicitly enabled in Firefox */
-    /* see https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility */
+    /* :has selector needs  */
     [data-testid='like'][role='button'],
     :has(>[data-testid='like'][role='button']) {
       display: none;
@@ -178,32 +177,17 @@
   /* nav in timeline */
   /* hacky solution to display bug in new tweets hint. */
   if noNav {
-    .r-1ye8kvj[data-testid="primaryColumn"]>[tabindex]> :first-child {
-      pointer-events: none;
-    }
-
-    main section [data-testid="cellInnerDiv"] {
-      margin-top: -53px !important;
-    }
-
     .r-1e5uvyk:not([data-testid]) {
-      backdrop-filter: none;
-      background-color: transparent;
-    }
-
-    .r-1e5uvyk:not([data-testid])> :first-child {
-      background-color: var(--color-background-alpha);
-      backdrop-filter: blur(12px);
-    }
-
-    .r-1e5uvyk:not([data-testid])> :last-child {
-      opacity: 0;
+      display: none;
     }
 
     /* mobile view */
-    [data-testid="TopNavBar"] nav[role="navigation"],
-    [data-testid="primaryColumn"] svg.r-8kz0gk {
+    [data-testid="TopNavBar"] nav[role="navigation"] {
       display: none;
+    }
+
+    header>div {
+      height: 53px !important;
     }
   }
 }
