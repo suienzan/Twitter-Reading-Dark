@@ -172,7 +172,7 @@
 
   /* ide 'Post' in timeline */
   if noPost {
-    [data-testid='primaryColumn']>[tabindex="0"]>.r-184en5c {
+    [data-testid='primaryColumn']>[tabindex='0']>.r-184en5c {
       display: none;
     }
   }
@@ -183,25 +183,25 @@
   /* nav in timeline */
   /* hacky solution for display bug in new tweets hint. */
   if noNav {
-    [data-testid='primaryColumn']>[tabindex="0"]>.r-1g40b8q {
+    [data-testid='primaryColumn']>[tabindex='0']>.r-1g40b8q {
       background-color: trasparent;
       pointer-events: none;
     }
 
-    [data-testid='primaryColumn']>[tabindex="0"]>.r-1g40b8q .r-1e5uvyk {
+    [data-testid='primaryColumn']>[tabindex='0']>.r-1g40b8q .r-1e5uvyk {
       opacity: 0;
     }
 
-    [data-testid='primaryColumn']>[tabindex="0"]>.r-1g40b8q [role="button"] {
+    [data-testid='primaryColumn']>[tabindex='0']>.r-1g40b8q [role='button'] {
       pointer-events: auto;
     }
 
-    main.r-1habvwh [data-testid="cellInnerDiv"] {
+    main.r-1habvwh [data-testid='cellInnerDiv'] {
       margin-top: -53px;
     }
 
     /* mobile view */
-    [data-testid="TopNavBar"] nav[role="navigation"] {
+    [data-testid='TopNavBar'] nav[role='navigation'] {
       display: none;
     }
 
