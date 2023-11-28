@@ -10,7 +10,7 @@
 @var            select theme "Theme" ["0:Default*", "1:IM@S Light", "2:IM@S Dark"] 
 @var            checkbox noLike "Hide like button" 0
 @var            checkbox noNav "Hide nav in timeline" 0
-@var            checkbox hidePost "Hide 'Post' in timeline" 0
+@var            checkbox noPost "Hide 'Post' in timeline" 0
 
 ==/UserStyle== */
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
@@ -171,7 +171,7 @@
   }
 
   /* ide 'Post' in timeline */
-  if hidePost {
+  if noPost {
     [data-testid='primaryColumn']>[tabindex="0"]>.r-184en5c {
       display: none;
     }
