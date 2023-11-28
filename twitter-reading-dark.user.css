@@ -196,7 +196,7 @@
       pointer-events: auto;
     }
 
-    [data-testid="cellInnerDiv"] {
+    main.r-1habvwh [data-testid="cellInnerDiv"] {
       margin-top: -53px;
     }
 
