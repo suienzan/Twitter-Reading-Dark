@@ -14,8 +14,6 @@
 
 ==/UserStyle== */
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
-
-  /* stylelint-disable selector-max-compound-selectors */
   /** IM@S Light **/
   if theme==1 {
     :root {
@@ -46,8 +44,6 @@
     }
   }
 
-  /* stylelint-enable selector-max-compound-selectors */
-
   /** Default **/
   else {
     :root {
@@ -61,8 +57,8 @@
   /** color **/
   /* main background */
   body,
-  :not([role='radiogroup'])>.r-yfoy6g,
-  :not([role='radiogroup'])>.r-14lw9ot {
+  :not([role='radiogroup']) > .r-yfoy6g,
+  :not([role='radiogroup']) > .r-14lw9ot {
     background-color: var(--color-background) !important;
   }
 
@@ -140,43 +136,41 @@
 
   /* Like button */
   if noLike {
-
     /* :has selector needs  */
     [data-testid='like'][role='button'],
-    :has(>[data-testid='like'][role='button']) {
+    :has(> [data-testid='like'][role='button']) {
       display: none;
     }
   }
 
   /* Hide What’s happening */
   if noPost {
-    [data-testid='primaryColumn']>[tabindex='0']>.r-184en5c {
+    [data-testid='primaryColumn'] > [tabindex='0'] > .r-184en5c {
       display: none;
     }
   }
 }
 
 @-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet|(.*)\/status\/(.*))') {
-
   /** hide annoying **/
   /* Who to follow & etc... */
-  [data-testid='cellInnerDiv']>:not(.r-1ila09b) {
+  [data-testid='cellInnerDiv'] > :not(.r-1ila09b) {
     display: none;
   }
 
   /* nav in timeline */
   /* hacky solution for display bug in new tweets hint. */
   if noNav {
-    [data-testid='primaryColumn']>[tabindex='0']>.r-1g40b8q {
+    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q {
       background-color: trasparent;
       pointer-events: none;
     }
 
-    [data-testid='primaryColumn']>[tabindex='0']>.r-1g40b8q .r-1e5uvyk {
+    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q .r-1e5uvyk {
       opacity: 0;
     }
 
-    [data-testid='primaryColumn']>[tabindex='0']>.r-1g40b8q [role='button'] {
+    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q [role='button'] {
       pointer-events: auto;
     }
 
@@ -189,14 +183,13 @@
       display: none;
     }
 
-    header>.r-633pao {
+    header > .r-633pao {
       height: 53px !important;
     }
   }
 }
 
 @-moz-document regexp('^(?!.*(?:\\/(.+)){1}(search\\?))(?!.*(?:\\/(.+)){2}(following|followers)$)https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
-
   /* Who to follow content */
   [data-testid='UserCell'] {
     display: none;

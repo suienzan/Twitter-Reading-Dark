@@ -7,4 +7,4 @@ rules:
     - attribute
     - class
     - id
-    
+  selector-max-compound-selectors: 9
