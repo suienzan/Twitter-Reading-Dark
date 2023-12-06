@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.9.4
+@version        0.9.5
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -10,7 +10,7 @@
 @var            select theme "Theme" ["0:Default*", "1:IM@S Light", "2:IM@S Dark"] 
 @var            checkbox noLike "Hide like button" 0
 @var            checkbox noNav "Hide nav in timeline" 0
-@var            checkbox noPost "Hide 'Post' in timeline" 0
+@var            checkbox noPost "Hide What’s happening" 1
 
 ==/UserStyle== */
 @-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
@@ -122,27 +122,20 @@
   }
 
   /** hide annoying **/
-  /* What’s happening */
-  [data-testid='primaryColumn']>.css-1dbjc4n>.r-184en5c,
-  /* Who to follow title & etc... */
-  [data-testid='primaryColumn'] h2[role='heading']
-  /* Who to follow Show more */
-  [href^='/i/connect_people?user_id='],
-  /* empty border after Who to follow & etc... */
-  .r-109y4c4,
-  /* Topics to follow content */
-  [data-testid='primaryColumn'] section nav[role='navigation'],
-  /* Topics to follow More Topics */
-  [href^='/i/topics/picker/home'],
-  /* Discover new Lists */
-  [data-testid='listCell'],
-  /* empty blocks after purging topics by script (README.md - (Optional))*/
-  .r-1ila09b.r-qklmqi.r-1adg3ll.r-1ny4l3l>.css-1dbjc4n:empty,
-  /* Push notifications */
-  [data-testid='inlinePrompt'],
   /* Sidebar */
-  [data-testid='sidebarColumn'] {
+  [data-testid='sidebarColumn'],
+  /* empty border */
+  .r-109y4c4 {
     display: none;
+  }
+
+  /* border color */
+  .r-1ila09b {
+    border-bottom-color: var(--color-background-accent);
+  }
+
+  .r-1kfrmmb {
+    border-top-color: var(--color-background-accent);
   }
 
   /* Like button */
@@ -155,22 +148,7 @@
     }
   }
 
-  /* empty border fix */
-  [data-testid='primaryColumn'] .r-qklmqi {
-    border-bottom-width: 0;
-  }
-
-  [data-testid='primaryColumn'] article {
-    border-bottom-color: var(--color-background-accent);
-    border-bottom-width: 1px;
-  }
-
-  /* border color in /compose/tweet */
-  .r-1ila09b {
-    border-bottom-color: var(--color-background-accent);
-  }
-
-  /* ide 'Post' in timeline */
+  /* Hide What’s happening */
   if noPost {
     [data-testid='primaryColumn']>[tabindex='0']>.r-184en5c {
       display: none;
@@ -178,7 +156,13 @@
   }
 }
 
-@-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/home') {
+@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet|(.*)\/status\/(.*))') {
+
+  /** hide annoying **/
+  /* Who to follow & etc... */
+  [data-testid='cellInnerDiv']>:not(.r-1ila09b) {
+    display: none;
+  }
 
   /* nav in timeline */
   /* hacky solution for display bug in new tweets hint. */
