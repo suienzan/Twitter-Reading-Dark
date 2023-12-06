@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.9.5
+@version        0.9.6
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -13,7 +13,7 @@
 @var            checkbox noPost "Hide What’s happening" 1
 
 ==/UserStyle== */
-@-moz-document regexp('^https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
+@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/?.*') {
   /** IM@S Light **/
   if theme==1 {
     :root {
@@ -166,16 +166,12 @@
       pointer-events: none;
     }
 
-    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q .r-1e5uvyk {
+    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q > .r-1e5uvyk:not(.r-1h3ijdo) {
       opacity: 0;
     }
 
     [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q [role='button'] {
       pointer-events: auto;
-    }
-
-    main.r-1habvwh [data-testid='cellInnerDiv'] {
-      margin-top: -53px;
     }
 
     /* mobile view */
@@ -189,7 +185,17 @@
   }
 }
 
-@-moz-document regexp('^(?!.*(?:\\/(.+)){1}(search\\?))(?!.*(?:\\/(.+)){2}(following|followers)$)https:\\/\\/(.*\\.)?twitter.com\\/?.*') {
+@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet|(.*)\/photo\/(.*))') {
+  /* nav in timeline */
+  /* hacky solution for display bug in new tweets hint. */
+  if noNav {
+    main.r-1habvwh [data-testid='cellInnerDiv'] {
+      margin-top: -53px;
+    }
+  }
+}
+
+@-moz-document regexp('^(?!.*(?:\/(.+)){1}(search\?))(?!.*(?:\/(.+)){2}(following|followers)$)https:\/\/(.*\.)?twitter.com\/?.*') {
   /* Who to follow content */
   [data-testid='UserCell'] {
     display: none;
