@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.9.8
+@version        0.9.9
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only.
 @author         Midori <suienzan@gmail.com>
@@ -151,17 +151,22 @@
   }
 }
 
-@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(?!search\?).*(?<!\/media)$') {
+@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(?!search\?|explore\/|.*\/(verified_followers|following|followers)$).*') {
   /** hide annoying **/
   /* Who to follow & etc... */
-  [data-testid='cellInnerDiv'] > :not(.r-1ila09b) {
+  [data-testid='cellInnerDiv'] > :not(.r-1ila09b) .r-ymttw5.r-1f1sjgu {
+    display: none;
+  }
+
+  [data-testid='UserCell'] {
     display: none;
   }
 }
 
-@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet|(.*)\/status\/(.*))') {
+@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet)') {
   /* nav in timeline */
   /* hacky solution for display bug in new tweets hint. */
+  /* TODO: wait support for :has() */
   if noNav {
     [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q {
       background-color: trasparent;
@@ -176,6 +181,10 @@
       pointer-events: auto;
     }
 
+    main [data-testid='cellInnerDiv'] {
+      margin-top: -53px;
+    }
+
     /* mobile view */
     [data-testid='TopNavBar'] nav[role='navigation'] {
       display: none;
@@ -187,19 +196,4 @@
   }
 }
 
-@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet|(.*)\/photo\/(.*))') {
-  /* nav in timeline */
-  /* hacky solution for display bug in new tweets hint. */
-  if noNav {
-    main.r-1habvwh [data-testid='cellInnerDiv'] {
-      margin-top: -53px;
-    }
-  }
-}
 
-@-moz-document regexp('^(?!.*(?:\/(.+)){1}(search\?))(?!.*(?:\/(.+)){2}(following|followers)$)https:\/\/(.*\.)?twitter.com\/?.*') {
-  /* Who to follow content */
-  [data-testid='UserCell'] {
-    display: none;
-  }
-}
