@@ -8,3 +8,4 @@ rules:
     - class
     - id
   selector-max-compound-selectors: 9
+  max-nesting-depth: 9

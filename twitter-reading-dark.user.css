@@ -1,9 +1,9 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.9.11
+@version        0.10.0
 @updateURL      https://userstyles.world/api/style/719.user.css
-@description    A dark twitter theme for reading only.
+@description    A dark twitter theme for reading only. Need :has() support. Seeing https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility.
 @author         Midori <suienzan@gmail.com>
 @preprocessor   stylus
 
@@ -134,9 +134,23 @@
     border-top-color: var(--color-background-accent);
   }
 
+  /* Who to follow & etc... */
+  /* in home page */
+  [data-testid='primaryColumn']:has([data-testid='tweetButtonInline']),
+  /* in user profile page */
+  [data-testid='primaryColumn']:has([data-testid='UserName']) {
+    /* title */
+    [data-testid='cellInnerDiv']:has(h2[role='heading']),
+    /* Who to follow content */
+    [data-testid='cellInnerDiv']:has([data-testid='UserCell']),
+    /* Show more */
+    [data-testid='cellInnerDiv']:has(a[href*='/i/connect_people?']), {
+      display: none;
+    }
+  }
+
   /* Like button */
   if noLike {
-    /* :has selector needs  */
     [data-testid='like'][role='button'],
     :has(> [data-testid='like'][role='button']) {
       display: none;
@@ -145,54 +159,50 @@
 
   /* Hide What’s happening */
   if noPost {
-    [data-testid='primaryColumn'] > [tabindex='0'] > .r-184en5c {
+    [data-testid='primaryColumn'] > [tabindex='0'] > :has([data-testid='tweetButtonInline']):has([data-testid='createPollButton']) {
       display: none;
     }
   }
-}
 
-@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(?!search\?|(settings\/)?explore($|\/)|.*\/(verified_followers|followers_you_follow|following|followers)$).*') {
-  /** hide annoying **/
-  /* Who to follow & etc... */
-  [data-testid='cellInnerDiv'] > :not(.r-1ila09b) .r-ymttw5.r-1f1sjgu,
-  [data-testid='cellInnerDiv'] > :not(.r-1ila09b) a[href*='/i/connect_people?'] {
-    display: none;
-  }
-
-  [data-testid='UserCell'] {
-    display: none;
-  }
-}
-
-@-moz-document regexp('^https:\/\/(.*\.)?twitter.com\/(home|compose\/tweet)') {
   /* nav in timeline */
-  /* hacky solution for display bug in new tweets hint. */
-  /* TODO: wait support for :has() */
   if noNav {
-    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q {
-      background-color: trasparent;
-      pointer-events: none;
-    }
+    /* hacky solution for display bug in new tweets hint. */
+    [data-testid='primaryColumn']:has([data-testid='tweetButtonInline']):has([data-testid='createPollButton']) {
+      [tabindex='0'] > :has([href='/home']) {
+        background-color: trasparent;
+        pointer-events: none;
 
-    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q > .r-1e5uvyk:not(.r-1h3ijdo) {
-      opacity: 0;
-    }
+        > :has([href='/home']) {
+          opacity: 0;
+        }
 
-    [data-testid='primaryColumn'] > [tabindex='0'] > .r-1g40b8q [role='button'] {
-      pointer-events: auto;
-    }
+        [role='button'] {
+          pointer-events: auto;
+        }
+      }
 
-    main.r-1habvwh [data-testid='cellInnerDiv'] {
-      margin-top: -53px;
+      if noPost {
+        > [tabindex='0'] > :has([data-testid='cellInnerDiv']) {
+          margin-top: -53px;
+        }
+      }
+
+      else {
+        > [tabindex='0'] > :has([data-testid='tweetButtonInline']):has([data-testid='createPollButton']) {
+          margin-top: -53px;
+        }
+      }
     }
 
     /* mobile view */
-    [data-testid='TopNavBar'] nav[role='navigation'] {
-      display: none;
-    }
+    body:has([data-testid='TopNavBar']) {
+      [data-testid='TopNavBar'] nav[role='navigation'] {
+        display: none;
+      }
 
-    header > .r-633pao {
-      height: 53px !important;
+      header > div:empty {
+        height: 53px !important;
+      }
     }
   }
 }
