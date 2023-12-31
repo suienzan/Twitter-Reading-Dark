@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.10.1
+@version        0.10.2
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only. Need :has() support. Seeing https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility.
 @author         Midori <suienzan@gmail.com>
@@ -121,7 +121,9 @@
   /* Sidebar */
   [data-testid='sidebarColumn'],
   /* empty border */
-  .r-109y4c4 {
+  .r-109y4c4,
+  /* inline prompt */
+  [data-testid='cellInnerDiv']:has([data-testid='inlinePrompt']) {
     display: none;
   }
 
