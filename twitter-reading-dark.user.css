@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        0.10.3
+@version        0.10.4
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only. Need :has() support. Seeing https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility.
 @author         Midori <suienzan@gmail.com>
@@ -148,7 +148,7 @@
     /* Who to follow content */
     [data-testid='cellInnerDiv']:has([data-testid='UserCell']),
     /* Show more */
-    [data-testid='cellInnerDiv']:has(a[href*='/i/connect_people?']), {
+    [data-testid='cellInnerDiv']:has(a[href*='/i/connect_people?']) {
       display: none;
     }
   }
@@ -163,7 +163,7 @@
 
   /* Hide What’s happening */
   if noPost {
-    [data-testid='primaryColumn'] > [tabindex='0'] > :has([data-testid='tweetButtonInline']):has([data-testid='createPollButton']) {
+    [data-testid='primaryColumn'] > [tabindex='0'] > :has([d*='M6 5c-1.1 0-2']) {
       display: none;
     }
   }
@@ -171,7 +171,7 @@
   /* nav in timeline */
   if noNav {
     /* hacky solution for display bug in new tweets hint. */
-    [data-testid='primaryColumn']:has([data-testid='tweetButtonInline']):has([data-testid='createPollButton']) {
+    [data-testid='primaryColumn']:has([d*='M6 5c-1.1 0-2']) {
       [tabindex='0'] > :has([href='/home']) {
         background-color: trasparent;
         pointer-events: none;
@@ -192,7 +192,7 @@
       }
 
       else {
-        > [tabindex='0'] > :has([data-testid='tweetButtonInline']):has([data-testid='createPollButton']) {
+        > [tabindex='0'] > :has([d*='M6 5c-1.1 0-2']) {
           margin-top: -53px;
         }
       }
