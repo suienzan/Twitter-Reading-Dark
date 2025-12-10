@@ -18,10 +18,10 @@
   /** IM@S Light **/
   if theme==1 {
     :root {
-      --color-background: #fbfafa;
-      --color-background-alpha: #fbfafabf;
-      --color-background-accent: #ebe1ff;
-      --color-background-accent-alpha: #ebe1ff66;
+      --color-custom-background: #fbfafa;
+      --color-custom-background-alpha: #fbfafabf;
+      --color-custom-background-accent: #ebe1ff;
+      --color-custom-background-accent-alpha: #ebe1ff66;
     }
 
     /* twitter logo */
@@ -33,10 +33,10 @@
   /** IM@S Dark **/
   else if theme==2 {
     :root {
-      --color-background: #3f3538;
-      --color-background-alpha: #3f3538bf;
-      --color-background-accent: #515558;
-      --color-background-accent-alpha: #51555866;
+      --color-custom-background: #3f3538;
+      --color-custom-background-alpha: #3f3538bf;
+      --color-custom-background-accent: #515558;
+      --color-custom-background-accent-alpha: #51555866;
     }
 
     /* twitter logo */
@@ -48,10 +48,10 @@
   /** Default **/
   else {
     :root {
-      --color-background: #333435;
-      --color-background-alpha: #333435bf;
-      --color-background-accent: #444648;
-      --color-background-accent-alpha: #44464866;
+      --color-custom-background: #333435;
+      --color-custom-background-alpha: #333435bf;
+      --color-custom-background-accent: #444648;
+      --color-custom-background-accent-alpha: #44464866;
     }
   }
 
@@ -60,7 +60,7 @@
   body,
   :not([role='radiogroup'])>.r-yfoy6g,
   :not([role='radiogroup'])>.r-14lw9ot {
-    background-color: var(--color-background) !important;
+    background-color: var(--color-custom-background) !important;
   }
 
   /* search bar background (light & dark)*/
@@ -73,7 +73,7 @@
   /* highlight background in menu (light & dark)*/
   .r-x572qd,
   .r-g6ijar {
-    background-color: var(--color-background-accent);
+    background-color: var(--color-custom-background-accent);
   }
 
   /* blurred background in top nav */
@@ -81,12 +81,12 @@
   .r-ii8lfi,
   .r-6026j,
   .r-1yc6c17 {
-    background-color: var(--color-background-alpha);
+    background-color: var(--color-custom-background-alpha);
   }
 
   /* dialog overlay */
   .r-11z020y {
-    background-color: var(--color-background-accent-alpha);
+    background-color: var(--color-custom-background-accent-alpha);
   }
 
   /* border color in /compose/tweet */
@@ -94,7 +94,7 @@
   /* border color vertical (light & dark) */
   .r-18bvks7,
   .r-1ets6dv {
-    border-color: var(--color-background-accent);
+    border-color: var(--color-custom-background-accent);
   }
 
   /* profile photo */
@@ -132,11 +132,11 @@
 
   /* border color */
   .r-1ila09b {
-    border-bottom-color: var(--color-background-accent);
+    border-bottom-color: var(--color-custom-background-accent);
   }
 
   .r-1kfrmmb {
-    border-top-color: var(--color-background-accent);
+    border-top-color: var(--color-custom-background-accent);
   }
 
   /* Who to follow & etc... */
