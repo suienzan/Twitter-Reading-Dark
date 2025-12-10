@@ -14,6 +14,7 @@
 
 ==/UserStyle== */
 @-moz-document regexp('^https:\/\/(.*\.)?(twitter|x).com\/?.*') {
+
   /** IM@S Light **/
   if theme==1 {
     :root {
@@ -57,8 +58,8 @@
   /** color **/
   /* main background */
   body,
-  :not([role='radiogroup']) > .r-yfoy6g,
-  :not([role='radiogroup']) > .r-14lw9ot {
+  :not([role='radiogroup'])>.r-yfoy6g,
+  :not([role='radiogroup'])>.r-14lw9ot {
     background-color: var(--color-background) !important;
   }
 
@@ -123,9 +124,9 @@
   /* empty border */
   .r-109y4c4,
   /* inline prompt */
-  [data-testid='cellInnerDiv']:has([data-testid='inlinePrompt']) ,
+  [data-testid='cellInnerDiv']:has([data-testid='inlinePrompt']),
   /* Spaces promotion in mobile view */
-  [data-testid='TopNavBar'] + :has([data-testid='placementTracking']) {
+  [data-testid='TopNavBar']+ :has([data-testid='placementTracking']) {
     display: none;
   }
 
@@ -145,6 +146,7 @@
   body:has([data-testid='TopNavBar']):has([href='/home/pinned/edit']) [data-testid='primaryColumn'],
   /* in user profile page */
   [data-testid='primaryColumn']:has([data-testid='UserName']) {
+
     /* title */
     [data-testid='cellInnerDiv']:has(h2[role='heading']),
     /* Who to follow content */
@@ -157,6 +159,7 @@
 
   /* Like button */
   if noLike {
+
     [data-testid='like'][role='button'],
     :has(> [data-testid='like'][role='button']) {
       display: none;
@@ -165,16 +168,17 @@
 
   /* Hide What’s happening */
   if noPost {
-    [data-testid='primaryColumn'] > [tabindex='0'] > :has([d*='M6 5c-1.1 0-2']) {
+    [data-testid='primaryColumn']>[tabindex='0']> :has([d*='M6 5c-1.1 0-2']) {
       display: none;
     }
   }
 
   /* nav in timeline */
   if noNav {
+
     /* hacky solution for display bug in new tweets hint. */
     [data-testid='primaryColumn']:has([d*='M6 5c-1.1 0-2']) {
-      [tabindex='0'] > :has([href='/home']) {
+      [tabindex='0']> :has([href='/home']) {
         background-color: trasparent;
         pointer-events: none;
 
@@ -194,7 +198,7 @@
       }
 
       else {
-        > [tabindex='0'] > :has([d*='M6 5c-1.1 0-2']) {
+        >[tabindex='0']> :has([d*='M6 5c-1.1 0-2']) {
           margin-top: -53px;
         }
       }
@@ -206,7 +210,7 @@
         display: none;
       }
 
-      header > div:empty {
+      header>div:empty {
         height: 53px !important;
       }
     }
