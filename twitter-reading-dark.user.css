@@ -59,7 +59,9 @@
   /* main background */
   body,
   :not([role='radiogroup'])>.r-yfoy6g,
-  :not([role='radiogroup'])>.r-14lw9ot {
+  :not([role='radiogroup'])>.r-14lw9ot,
+  /* buttons in /i/grok */
+  [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9):not(.r-wamsre) {
     background-color: var(--color-custom-background) !important;
   }
 
@@ -72,7 +74,9 @@
   .r-hjejmn,
   /* highlight background in menu (light & dark)*/
   .r-x572qd,
-  .r-g6ijar {
+  .r-g6ijar,
+  /* buttons:hover in /i/grok */
+  [data-testid='primaryColumn'] button.r-wamsre {
     background-color: var(--color-custom-background-accent);
   }
 
@@ -89,12 +93,27 @@
     background-color: var(--color-custom-background-accent-alpha);
   }
 
+  /** border color **/
+  .r-1ila09b {
+    border-bottom-color: var(--color-custom-background-accent);
+  }
+
+  .r-1kfrmmb {
+    border-top-color: var(--color-custom-background-accent);
+  }
+
   /* border color in /compose/tweet */
   .r-j5o65s,
   /* border color vertical (light & dark) */
   .r-18bvks7,
   .r-1ets6dv {
     border-color: var(--color-custom-background-accent);
+  }
+
+  /* buttons in /i/grok */
+  [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9),
+  [data-testid='primaryColumn'] button:has(svg+.r-4qtqp9)>.r-rs99b7 {
+    border-color: var(--color-custom-background-accent) !important;
   }
 
   /* profile photo */
@@ -121,6 +140,8 @@
   /** hide annoying **/
   /* Sidebar */
   [data-testid='sidebarColumn'],
+  /* drawer of Chat & Grok */
+  h2[role="heading"]+ :not([aria-hidden]),
   /* empty border */
   .r-109y4c4,
   /* inline prompt */
@@ -128,15 +149,6 @@
   /* Spaces promotion in mobile view */
   [data-testid='TopNavBar']+ :has([data-testid='placementTracking']) {
     display: none;
-  }
-
-  /* border color */
-  .r-1ila09b {
-    border-bottom-color: var(--color-custom-background-accent);
-  }
-
-  .r-1kfrmmb {
-    border-top-color: var(--color-custom-background-accent);
   }
 
   /* Who to follow & etc... */
