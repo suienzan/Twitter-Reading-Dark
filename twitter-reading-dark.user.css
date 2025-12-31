@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        1.0.1
+@version        1.0.2
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only. Need :has() support. Seeing https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility.
 @author         Midori <suienzan@gmail.com>
@@ -60,6 +60,8 @@
   body,
   :not([role='radiogroup'])>.r-yfoy6g,
   :not([role='radiogroup'])>.r-14lw9ot,
+  /* Chat & Grok buttons */
+  [data-testid="chat-drawer-main"] > .bg-background,
   /* buttons in /i/grok */
   [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9):not(.r-wamsre) {
     background-color: var(--color-custom-background) !important;
@@ -140,8 +142,6 @@
   /** hide annoying **/
   /* Sidebar */
   [data-testid='sidebarColumn'],
-  /* drawer of Chat & Grok */
-  #layers>.r-1p0dtai,
   /* empty border */
   .r-109y4c4,
   /* inline prompt */
