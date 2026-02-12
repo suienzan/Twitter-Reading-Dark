@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        1.0.2
+@version        1.1.0
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only. Need :has() support. Seeing https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility.
 @author         Midori <suienzan@gmail.com>
@@ -23,11 +23,6 @@
       --color-custom-background-accent: #ebe1ff;
       --color-custom-background-accent-alpha: #ebe1ff66;
     }
-
-    /* twitter logo */
-    .r-1cvl2hr {
-      color: #be1e3e;
-    }
   }
 
   /** IM@S Dark **/
@@ -37,11 +32,6 @@
       --color-custom-background-alpha: #3f3538bf;
       --color-custom-background-accent: #515558;
       --color-custom-background-accent-alpha: #51555866;
-    }
-
-    /* twitter logo */
-    [href='/home'] svg.r-jwli3a {
-      color: #f8a3bc;
     }
   }
 
@@ -58,35 +48,37 @@
   /** color **/
   /* main background */
   body,
-  :not([role='radiogroup'])>.r-yfoy6g,
+  #RemoveThisLineIfWontBreak,
+  /* light */
   :not([role='radiogroup'])>.r-14lw9ot,
+  /* dark */
+  :not([role='radiogroup'])>.r-kemksi,
   /* Chat & Grok buttons */
-  [data-testid="chat-drawer-main"] > .bg-background,
+  [data-testid="chat-drawer-main"]>.bg-background,
   /* buttons in /i/grok */
   [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9):not(.r-wamsre) {
     background-color: var(--color-custom-background) !important;
   }
 
-  /* search bar background (light & dark)*/
-  .r-1sw30gj,
-  .r-8erxvq,
   /* empty line use as border in /compose/tweet */
   .r-kuekak,
   /* timeline in /:name/status/:id */
   .r-hjejmn,
-  /* highlight background in menu (light & dark)*/
+  /* highlight background in menu */
+  /* light */
   .r-x572qd,
-  .r-g6ijar,
+  /* dark */
+  .r-g2wdr4,
   /* buttons:hover in /i/grok */
   [data-testid='primaryColumn'] button.r-wamsre {
     background-color: var(--color-custom-background-accent);
   }
 
   /* blurred background in top nav */
-  .r-snbmw9,
-  .r-ii8lfi,
+  /* light */
   .r-6026j,
-  .r-1yc6c17 {
+  /* dark */
+  .r-5zmot {
     background-color: var(--color-custom-background-alpha);
   }
 
@@ -95,26 +87,28 @@
     background-color: var(--color-custom-background-accent-alpha);
   }
 
-  /** border color **/
-  .r-1ila09b {
-    border-bottom-color: var(--color-custom-background-accent);
-  }
-
-  .r-1kfrmmb {
-    border-top-color: var(--color-custom-background-accent);
-  }
-
-  /* border color in /compose/tweet */
+  /** border color vertical **/
+  /* light */
+  .r-jxzhtn,
+  /* dark */
+  .r-1kqtdi0,
+  /* border color horizontal */
+  /* light */
   .r-j5o65s,
-  /* border color vertical (light & dark) */
-  .r-18bvks7,
-  .r-1ets6dv {
+  /* dark */
+  .r-1igl3o0,
+  /* card, media & etc... */
+  .r-1ets6dv,
+  /* border of grok & chat button */
+  .r-1xsrhxi,
+  /* border in /:name/status/:id */
+  .r-2sztyj {
     border-color: var(--color-custom-background-accent);
   }
 
   /* buttons in /i/grok */
-  [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9),
-  [data-testid='primaryColumn'] button:has(svg+.r-4qtqp9)>.r-rs99b7 {
+  [data-testid='primaryColumn'] button.r-rs99b7:has(svg + .r-4qtqp9),
+  [data-testid='primaryColumn'] button:has(svg + .r-4qtqp9)>.r-rs99b7 {
     border-color: var(--color-custom-background-accent) !important;
   }
 
@@ -128,22 +122,15 @@
   }
 
   /** fix **/
-  /* remove padding under reply */
-  .r-kzbkwu.r-aaos50 {
+  /* remove padding under 'Post your reply' */
+  .r-1h8ys4a.r-1mmae3n {
     padding-bottom: 0;
-  }
-
-  /* change box of Show replies in /:name/status/:id */
-  .r-m2pi6t.r-19u6a5r[role='button'] {
-    margin-left: 0;
-    padding-left: 16px;
   }
 
   /** hide annoying **/
   /* Sidebar */
   [data-testid='sidebarColumn'],
   /* empty border */
-  .r-109y4c4,
   /* inline prompt */
   [data-testid='cellInnerDiv']:has([data-testid='inlinePrompt']),
   /* Spaces promotion in mobile view */
