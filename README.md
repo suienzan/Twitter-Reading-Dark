@@ -20,4 +20,4 @@ Then:
 
 1. 📦 [Install the usercss](https://github.com/suienzan/Twitter-Reading-Dark/raw/main/twitter-reading-dark.user.css). It supports automatic updates.
 
-2. Change twitter display setting: More - Display - Background to `Dim`. Or to `Default` if you use light theme.
+2. Change twitter display setting: More - Display - Background to `Lights out`. Or to `Default` if you use light theme.
