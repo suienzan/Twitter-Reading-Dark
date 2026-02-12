@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Twitter Reading Dark
 @namespace      suienzan
-@version        1.1.0
+@version        1.1.1
 @updateURL      https://userstyles.world/api/style/719.user.css
 @description    A dark twitter theme for reading only. Need :has() support. Seeing https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility.
 @author         Midori <suienzan@gmail.com>
@@ -49,6 +49,7 @@
   /* main background */
   body,
   #RemoveThisLineIfWontBreak,
+  /* primaryColumn */
   /* light */
   :not([role='radiogroup'])>.r-14lw9ot,
   /* dark */
@@ -56,7 +57,9 @@
   /* Chat & Grok buttons */
   [data-testid="chat-drawer-main"]>.bg-background,
   /* buttons in /i/grok */
-  [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9):not(.r-wamsre) {
+  [data-testid='primaryColumn'] button.r-rs99b7:has(svg+.r-4qtqp9):not(.r-wamsre),
+  /* button in /explore > 'For you' tab */
+  .r-loe9s5 {
     background-color: var(--color-custom-background) !important;
   }
 
@@ -87,16 +90,19 @@
     background-color: var(--color-custom-background-accent-alpha);
   }
 
-  /** border color vertical **/
+  /** border color **/
+  /* vertical */
   /* light */
   .r-jxzhtn,
   /* dark */
   .r-1kqtdi0,
-  /* border color horizontal */
+  /* horizontal */
   /* light */
   .r-j5o65s,
   /* dark */
   .r-1igl3o0,
+  /* unfocused search bar in /explore */
+  .r-1roi411,
   /* card, media & etc... */
   .r-1ets6dv,
   /* border of grok & chat button */
@@ -104,6 +110,11 @@
   /* border in /:name/status/:id */
   .r-2sztyj {
     border-color: var(--color-custom-background-accent);
+  }
+
+  /* border under What’s happening, indeed 1px height box */
+  .r-109y4c4 {
+    background-color: var(--color-custom-background-accent);
   }
 
   /* buttons in /i/grok */
@@ -130,7 +141,6 @@
   /** hide annoying **/
   /* Sidebar */
   [data-testid='sidebarColumn'],
-  /* empty border */
   /* inline prompt */
   [data-testid='cellInnerDiv']:has([data-testid='inlinePrompt']),
   /* Spaces promotion in mobile view */
@@ -167,6 +177,10 @@
 
   /* Hide What’s happening */
   if noPost {
+    .r-109y4c4 {
+      display: none;
+    }
+
     [data-testid='primaryColumn']>[tabindex='0']> :has([d*='M6 5c-1.1 0-2']) {
       display: none;
     }
@@ -174,33 +188,8 @@
 
   /* nav in timeline */
   if noNav {
-
-    /* hacky solution for display bug in new tweets hint. */
-    [data-testid='primaryColumn']:has([d*='M6 5c-1.1 0-2']) {
-      [tabindex='0']> :has([href='/home']) {
-        background-color: trasparent;
-        pointer-events: none;
-
-        > :has([href='/home']) {
-          opacity: 0;
-        }
-
-        [role='button'] {
-          pointer-events: auto;
-        }
-      }
-
-      if noPost {
-        [data-testid='cellInnerDiv'] {
-          margin-top: -53px;
-        }
-      }
-
-      else {
-        >[tabindex='0']> :has([d*='M6 5c-1.1 0-2']) {
-          margin-top: -53px;
-        }
-      }
+    .r-1e5uvyk nav:not(:has(a)) {
+      display: none;
     }
 
     /* mobile view */
